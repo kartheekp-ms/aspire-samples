@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/01-BasicNpgsql/">
+    <File Path="01-BasicNpgsql/apphost.cs" />
+    <File Path="01-BasicNpgsql/aspire.config.json" />
+    <Project Path="01-BasicNpgsql/Sample01_BasicNpgsql.Api/Sample01_BasicNpgsql.Api.csproj" />
+    <Project Path="01-BasicNpgsql/Sample01_BasicNpgsql.Tests/Sample01_BasicNpgsql.Tests.csproj" />
+  </Folder>
+  <Folder Name="/02-EfCore/">
+    <Project Path="02-EfCore/Sample02_EfCore.ApiService/Sample02_EfCore.ApiService.csproj" />
+    <Project Path="02-EfCore/Sample02_EfCore.AppHost/Sample02_EfCore.AppHost.csproj" />
+    <Project Path="02-EfCore/Sample02_EfCore.ServiceDefaults/Sample02_EfCore.ServiceDefaults.csproj" />
+    <Project Path="02-EfCore/Sample02_EfCore.Tests/Sample02_EfCore.Tests.csproj" />
+    <Project Path="02-EfCore/Sample02_EfCore.Web/Sample02_EfCore.Web.csproj" />
+  </Folder>
+  <Folder Name="/03-ImageTag/">
+    <Project Path="03-ImageTag/Sample03_ImageTag.ApiService/Sample03_ImageTag.ApiService.csproj" />
+    <Project Path="03-ImageTag/Sample03_ImageTag.AppHost/Sample03_ImageTag.AppHost.csproj" />
+    <Project Path="03-ImageTag/Sample03_ImageTag.ServiceDefaults/Sample03_ImageTag.ServiceDefaults.csproj" />
+    <Project Path="03-ImageTag/Sample03_ImageTag.Tests/Sample03_ImageTag.Tests.csproj" />
+    <Project Path="03-ImageTag/Sample03_ImageTag.Web/Sample03_ImageTag.Web.csproj" />
+  </Folder>
+</Solution>

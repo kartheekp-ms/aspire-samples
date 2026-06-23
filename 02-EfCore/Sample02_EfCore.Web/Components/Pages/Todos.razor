@@ -1,0 +1,46 @@
+@page "/todos"
+@attribute [StreamRendering(true)]
+
+@inject TodosApiClient TodosApi
+
+<PageTitle>Todos</PageTitle>
+
+<h1>Todos</h1>
+
+<p>This page shows todo items loaded from the API service, which persists them in PostgreSQL via EF Core.</p>
+
+@if (todos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var todo in todos)
+            {
+                <tr>
+                    <td>@todo.Id</td>
+                    <td>@todo.Title</td>
+                    <td>@(todo.IsComplete ? "✔" : "")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private TodoItem[]? todos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        todos = await TodosApi.GetTodosAsync();
+    }
+}

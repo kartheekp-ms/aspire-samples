@@ -1,0 +1,48 @@
+@page "/entries"
+@attribute [StreamRendering(true)]
+
+@inject GuestbookApiClient GuestbookApi
+
+<PageTitle>Guestbook</PageTitle>
+
+<h1>Guestbook</h1>
+
+<p>This page shows guestbook entries loaded from the API service, which stores them in PostgreSQL. The Postgres server uses a persistent data volume, so entries survive app restarts.</p>
+
+@if (entries == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Author</th>
+                <th>Message</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in entries)
+            {
+                <tr>
+                    <td>@entry.Id</td>
+                    <td>@entry.Author</td>
+                    <td>@entry.Message</td>
+                    <td>@entry.Created.ToString("u")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private GuestbookEntry[]? entries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        entries = await GuestbookApi.GetEntriesAsync();
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "appHost": {
+    "path": "Sample02_EfCore.AppHost/Sample02_EfCore.AppHost.csproj"
+  },
+  "channel": "stable"
+}

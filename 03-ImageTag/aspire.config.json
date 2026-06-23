@@ -1,0 +1,6 @@
+{
+  "appHost": {
+    "path": "Sample03_ImageTag.AppHost/Sample03_ImageTag.AppHost.csproj"
+  },
+  "channel": "stable"
+}
